@@ -88,3 +88,7 @@ JavaScript syntax checks can run with `node --check script.js`, `node --check co
 `index.html` defines the sections and landmarks. `content.js` stores profile data in objects and arrays. `script.js` creates DOM elements using `textContent`, renders each list, and handles interactions. CSS custom properties define theme colors; media queries adapt the layout. `IntersectionObserver` tracks visible sections and starts short entrance animations. The theme preference uses `localStorage`, with a fallback when storage is unavailable. The site has no database or contact-form backend; the email link opens the visitor's email client.
 
 This is an editable assignment foundation. Browser visual validation, replacing missing personal content, pushing to GitHub, and deploying to Vercel remain necessary before submission.
+
+## Latest design refinement
+Typography uses Segoe UI with native system sans-serif fallbacks, without external font downloads. Interactions include copy email with status feedback, a reading progress line, back-to-top control, and subtle hover/focus feedback. Clipboard copying requires a supported secure context (HTTPS or localhost); if unavailable, the interface asks the visitor to select the address manually.
+

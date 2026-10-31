@@ -22,6 +22,41 @@ $('linkedin-link').append(link(cv.links.linkedin,'LinkedIn'));
 cv.achievements.forEach(item=>{const box=el('article','achievement');const preview=el('div','certificate-preview');image(preview,item.image,'Add certificate or achievement image','▤');box.append(preview,el('h3','',item.title),el('p','subtitle',item.organization),el('span','date',item.date),el('p','detail',item.description),link(item.url,'View credential'));$('achievement-list').append(box);});
 cv.experience.forEach(item=>{const article=el('article');const row=el('div','item-heading');row.append(el('h3','',item.role),el('span','date',item.date));article.append(row,el('p','subtitle',item.organization),el('p','detail',item.description));if(item.bullets.length){const list=el('ul');item.bullets.forEach(b=>list.append(el('li','',b)));article.append(list);}$('experience-list').append(article);});
 $('year').textContent=new Date().getFullYear();
+// A useful contact interaction with visible, screen-reader-friendly feedback.
+const emailDetails = [...document.querySelectorAll('#info dd')][1];
+const copyEmail = el('button','copy-email','Copy email');
+const copyStatus = el('span','copy-status');
+copyStatus.setAttribute('role','status');
+emailDetails.append(copyEmail,copyStatus);
+let copyTimer;
+copyEmail.addEventListener('click',async()=>{
+  try {
+    await navigator.clipboard.writeText(cv.email);
+    copyStatus.textContent='Copied!';
+  } catch {
+    copyStatus.textContent='Select the email address to copy it.';
+  }
+  clearTimeout(copyTimer);
+  copyTimer=setTimeout(()=>{copyStatus.textContent='';},3500);
+});
+const topLink=el('a','back-top','↑');
+topLink.href='#profile';
+topLink.setAttribute('aria-label','Back to top');
+topLink.hidden=true;
+document.body.append(topLink);
+const progress=el('div','reading-progress');
+progress.setAttribute('aria-hidden','true');
+document.querySelector('.topbar').append(progress);
+let scrollPending=false;
+function updateScroll(){
+  const height=document.documentElement.scrollHeight-innerHeight;
+  progress.style.transform='scaleX('+(height>0?Math.min(1,Math.max(0,scrollY/height)):0)+')';
+  topLink.hidden=scrollY<600;
+  scrollPending=false;
+}
+addEventListener('scroll',()=>{if(!scrollPending){scrollPending=true;requestAnimationFrame(updateScroll);}},{passive:true});
+addEventListener('resize',updateScroll);
+updateScroll();
 function themeLabel(){const dark=document.documentElement.dataset.theme==='dark';$('theme-label').textContent=dark?'Light':'Dark';$('theme').setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');}
 themeLabel();$('theme').addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;try{localStorage.setItem('cv-theme',next);}catch{}themeLabel();});
 $('print').addEventListener('click',()=>window.print());
