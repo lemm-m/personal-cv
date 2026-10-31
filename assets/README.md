@@ -1,0 +1,1 @@
+Place your profile photo, project screenshots, and certificate images here. Reference each file from content.js using a relative path such as assets/profile.jpg. Use web-friendly JPG, PNG, or WebP files with descriptive filenames.
