@@ -1,103 +1,71 @@
-# Lemuel Brion — Personal CV
+# Lemuel Brion — Personal CV & Portfolio
 
-A minimal, responsive personal CV website with ten assignment sections, light and dark modes, subtle entrance animations, mobile navigation, active section tracking, and a printable CV. Uses solid colors without gradients.
+A responsive, dependency-free portfolio with light/dark themes, featured projects, a filtered project collection, Android app previews and APK downloads, experience photos, a certificate, and a printable résumé.
 
 **Student:** Lemuel Brion  
-**Technologies:** HTML5, CSS3, vanilla JavaScript; Node.js for optional local preview. No third-party dependencies.  
-**Live Vercel link:** [Add your Vercel deployment URL]  
-**GitHub repository:** [Add your dedicated repository URL]
+**Technologies:** HTML, CSS, JavaScript; optional Node.js preview server  
+**Live Vercel URL:** [Add deployed URL]  
+**GitHub repository:** [Add portfolio repository URL]
 
-## Preview
+## Run locally
 
-With Node.js installed, run `node server.cjs` and open http://127.0.0.1:3000. You can also open `index.html` directly. If npm is installed, `npm run dev` starts the same server.
-
-## Personalize before submitting
-
-Edit `content.js`. This is the central content file; no framework knowledge is needed.
-
-- Confirm your title, introduction, career objective, current year level, and attendance dates.
-- Add a professional photo to `assets/`, then set `portrait: 'assets/profile.jpg'`.
-- Add GitHub, LinkedIn, and optional social URLs to `links`. Use complete `https://` URLs. Empty strings display a visible placeholder rather than a fake link.
-- Add project screenshots to `assets/`, then set each project's `image`. Add verified technologies, repository URLs, and live demos.
-- Add exact certificate names, dates, images, and credential links. The Cisco entry comes from the old portfolio and still needs its exact details.
-- Replace bracketed entries with truthful information. Remove unused senior high school, achievement, or experience entries from their arrays.
-- Review the suggested career objective and skills. Remove any skills you cannot demonstrate. Professional skills can be added to `skillGroups`.
-- Contact number is optional. Contact email is brionlemuel@gmail.com, as provided by the student.
-- Update the two submission URLs at the top of this README after deployment.
-
-Social profile links use the student-provided Facebook, Instagram, LinkedIn, and GitHub URLs. External project links remain placeholders. Nothing is uploaded from the photo or certificate placeholders. These are static placeholders, not upload controls.
-
-## File structure
-
-```text
-assets/         Your photos, screenshots, and certificate images
-content.js      Editable CV data
-index.html      Semantic structure and ten numbered sections
-styles.css      Layout, responsive rules, themes, animation, print styles
-script.js       Content rendering, theme toggle, menu, scroll tracking
-server.cjs      Optional dependency-free local preview server
-vercel.json     Static deployment configuration
-package.json    Optional development commands
-```
-
-## GitHub
-
-This folder includes a local Git repository with separate implementation commits. Preserve its `.git` directory if you want to retain that history; ZIP downloads do not include it. After creating an empty dedicated repository in your GitHub account, run these commands from this folder (replace YOUR-USERNAME first):
+Open this folder in VS Code and use Live Server, or run:
 
 ```sh
-git remote add origin https://github.com/YOUR-USERNAME/personal-cv.git
-git push -u origin main
+node server.cjs
 ```
 
-After your personal edits, make another meaningful commit describing the actual changes:
+Then open http://127.0.0.1:3000. Node.js is only needed for the optional server and checks. There are no packages to install.
 
-```sh
-git add .
-git commit -m "Personalize education, project evidence and professional links"
-git push
-```
+## Files
 
-Do not fabricate earlier development dates. The existing commits represent the actual implementation stages. If Git requests an identity for your own commits, configure your preferred GitHub name and email.
+| File | Purpose |
+| --- | --- |
+| index.html / script.js | Home portfolio and experience gallery |
+| projects.html / projects.js | Full project collection; shared gallery renderer also powers home highlights |
+| project.html / project.js | DoneIt and Financify detail pages and APK downloads |
+| assets/resume/ | Uploaded PDF opened by View my résumé |
+| content.js | Your profile, links, education, skills, projects, certificate, and experience |
+| ui.js | Shared DOM helpers and local technology icon map |
+| theme.js | Independent theme toggle with saved preferences |
+| styles.css | Shared styles, portfolio layout, responsive rules, and print styling |
+| project.css / projects.css | Page-specific styles |
+| assets/ | Images, icons, certificate, and APKs used by the site |
+| server.cjs | Optional local static server |
+| check.cjs | Syntax, local asset, and content checks |
+| vercel.json | Static hosting configuration |
 
-## Deploy to Vercel
+## Edit your content
 
-1. Sign in to Vercel and create a new project by importing your dedicated GitHub repository.
-2. Select **Other** as the framework preset. Use the repository root as the root directory, leave the build command empty, and use `.` as the output directory. This is a static site; `server.cjs` is for local preview only.
-3. Deploy, open the generated public URL, and run the checklist below.
-4. Add your verified live URL and repository URL to this README, commit, and push.
-5. Submit both links to the LMS. Open them in a signed-out browser to confirm public access.
+Change content.js. Use paths relative to the website root and forward slashes, for example assets/images/profile.jpg. Keep filenames and capitalization exact.
 
-Vercel dashboard wording may vary. No Vercel deployment or GitHub remote has been created by this local build.
+For projects:
 
-## Validation checklist
+- category: 'individual' or 'group'
+- kind: 'figma' for prototypes; omit it for development projects
+- image: project screenshot or app icon path
+- repository: complete HTTPS source repository URL
+- demo: complete HTTPS website URL
+- figma: prototype URL for a Figma entry
+- mobile: true for an Android app detail page
+- slug: unique app identifier used by project.html?app=doneit
+- apk: local APK path or direct HTTPS download URL
+- screenshots: array of { src, caption } objects for app previews
 
-JavaScript syntax checks can run with `node --check script.js`, `node --check content.js`, and `node --check server.cjs`.
+The home page displays up to two development projects and two Figma designs per filter. The collection page displays all matching work. Add experience photos using a gallery array with { src, title, caption } entries. Replace the PDF in assets/resume/ to update your résumé; keep the path in index.html synchronized.
 
-- Inspect at 1440px desktop, 1024px laptop, 768px tablet, and 390px mobile widths.
-- Check for horizontal overflow, overlapping text, and readable image cropping.
-- Toggle themes and reload; the preference should persist when browser storage is available.
-- Test mobile menu opening, section navigation, and Escape to close.
-- Use Tab to verify focus indicators and the skip link.
-- Check every real external link, email link, screenshot, and certificate.
-- Try Print CV and your browser's Save as PDF. The printed view uses light styling.
-- Verify that reduced-motion device settings suppress animations.
-- Remove all bracketed placeholders before your final submission.
+Toolkit illustrations are bundled SVG files. They do not require a CDN. Some are simplified illustrations rather than official brand artwork.
 
-## Explain the implementation
+## Check the website
 
-`index.html` defines the sections and landmarks. `content.js` stores profile data in objects and arrays. `script.js` creates DOM elements using `textContent`, renders each list, and handles interactions. CSS custom properties define theme colors; media queries adapt the layout. `IntersectionObserver` tracks visible sections and starts short entrance animations. The theme preference uses `localStorage`, with a fallback when storage is unavailable. The site has no database or contact-form backend; the email link opens the visitor's email client.
+Run node check.cjs (or npm run check if npm is installed). It checks JavaScript syntax, linked local files, image and APK paths, and project metadata.
 
-This is an editable assignment foundation. Browser visual validation, replacing missing personal content, pushing to GitHub, and deploying to Vercel remain necessary before submission.
+Before submission, manually check desktop, tablet, and mobile layouts; all filters and links; theme switching; app downloads; full-size photos; and résumé printing. Browser visual verification is still required after design changes.
 
-## Latest design refinement
-Typography uses Segoe UI with native system sans-serif fallbacks, without external font downloads. Interactions include copy email with status feedback, a reading progress line, back-to-top control, and subtle hover/focus feedback. Clipboard copying requires a supported secure context (HTTPS or localhost); if unavailable, the interface asks the visitor to select the address manually.
+## GitHub and Vercel
 
+Preserve the .git directory to retain the development history. Create a dedicated empty GitHub repository, add it as origin, and push your main branch. Make meaningful commits as you personalize the site.
 
-## CV section categories
-Navigation now groups the CV into Profile, Experience, Skills, Community, Projects, Training, Certifications, Education, and Contact. Basic information is under Profile; GitHub, LinkedIn, and social links are under Contact. Edit the community and training arrays in content.js to replace their placeholders. Existing personal content and image/link fields remain editable in the same file.
+Import that repository in Vercel as a static project: framework Other, no build command, output directory . (repository root). Include all assets referenced by content.js. For APKs too large for your Git provider, host them as release assets and use their direct download URLs.
 
-
-
-## Toolkit icons
-Skills now render as compact icon rows. Local SVG illustrations in assets/icons/ represent your existing tools; no CDN or font downloads are required. The skillIcons map in script.js matches names from content.js, ignoring capitalization. Unknown skill names receive a text fallback. Images are decorative because each row already includes its skill name. These simplified tool illustrations are not official brand assets.
-
+Add the final repository and Vercel URLs above, then verify both are publicly accessible before submitting them to your LMS.

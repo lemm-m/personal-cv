@@ -1,42 +1,44 @@
 // Edit this file to personalize your CV. Empty links render as honest, non-clickable placeholders.
 window.cv = {
   name: 'Lemuel Brion', title: 'Aspiring Web Developer',
-  introduction: 'BS Information Technology student with an interest in thoughtful interfaces, responsive websites, and practical solutions through code.',
-  objective: 'To contribute to a collaborative team through an internship or entry-level opportunity, apply my web development and design skills, and continue growing through real-world projects.',
-  location: 'Davao del Norte, Philippines', email: 'brionlemuel@gmail.com', phone: '09456626038',
-  portrait: '', // Example: assets/profile.jpg
-  yearLevel: '[Add your current year level]',
+  introduction: 'BS Information Technology student from Panabo City with interests in web development and virtual assistance, particularly CRM support and data entry.',
+  objective: 'To contribute to a collaborative team through opportunities in web development or virtual assistance, apply my programming and data entry experience, and continue developing my CRM skills.',
+  personalDescription: 'IT student and aspiring web developer with an interest in virtual assistance, CRM support, and data entry.',
+  careerInterests: 'Web development · Virtual assistance · CRM support · Data entry',
+  location: 'Panabo City, Davao del Norte, Philippines', email: 'brionlemuel@gmail.com', phone: '09456626038',
+  portrait: 'assets/images/profile.jpg', 
+  yearLevel: '4th year / final year', course: 'BS Information Technology', school: 'Davao del Norte State College',
   links: {
     github: 'https://github.com/lemm-m',
     linkedin: 'https://www.linkedin.com/in/lemuel-brion-a997b1448/',
     facebook: 'https://www.facebook.com/lemuel.brion.9',
     instagram: 'https://www.instagram.com/ramennsukii/'
   },
-  community: [
-    {title:'[Organization or community activity]', organization:'[Organization / community]', date:'[Add dates]', description:'[Describe your role, volunteer contribution, or school organization involvement.]'}
-  ],
-  training: [
-    {title:'[Training, workshop, or seminar]', organization:'[Training provider / organizer]', date:'[Add date]', description:'[Describe the topic, practical activities, and skills you learned.]'}
-  ],
   education: [
-    { school:'Davao del Norte State College', program:'Bachelor of Science in Information Technology', date:'[Add attendance dates]', detail:'Academic interests include web development, programming, UI/UX design, and software development.' },
-    { school:'[Senior High School]', program:'[Strand / program]', date:'[Add attendance dates]', detail:'[Add relevant academic honors or activities, or remove this entry.]' }
+    { school:'Davao del Norte State College', program:'Bachelor of Science in Information Technology', date:'', detail:'Academic interests include web development, programming, UI/UX design, and software development.' }
   ],
   skillGroups: [
     {title:'Web development', items:['HTML5','CSS3','JavaScript','Bootstrap','Responsive design']},
-    {title:'Programming & tools', items:['Python','Java','Git & GitHub','Visual Studio Code']},
-    {title:'Design & collaboration', items:['Figma','UI/UX design','Problem solving','[Add professional skills]']}
+    {title:'Programming & tools', items:["Python","Java","Git & GitHub","Visual Studio Code","C# · Learning","Visual Studio · Learning"]},
+    {title:'Design & collaboration', items:['Figma','UI/UX design','Problem solving',]},
+    {title:'Data entry & business tools', items:['Data entry','Workiz','Housecall Pro (HCP) · Learning','GoHighLevel (GHL) · Learning']}
   ],
   projects: [
-    {name:'Skillbridge', type:'Academic project', description:'A web-based OJT placement decision support system using NLP-assisted skills assessment to analyze student competencies and recommend suitable internship positions.', technologies:['NLP-assisted assessment','Decision support','[Add tech stack]'], image:'', repository:'', demo:''},
-    {name:'Sakyan', type:'Academic project', description:'A centralized car rental marketplace that brings car comparison, availability tracking, and booking into a more convenient rental experience in Mindanao.', technologies:['Web application','Marketplace','[Add tech stack]'], image:'', repository:'', demo:''}
+    {name:'Skillbridge', category:'group', type:"Capstone project", description:"An OJT recommendation system connecting academic development with internship opportunities.", technologies:["React","Python","JavaScript","CSS3","Supabase","Vercel"], image:'assets/images/skillbridge.webp', repository:"https://github.com/Zel-jpeg/SkillBridge", demo:'https://skillbridge-ic.vercel.app/'},
+    {name:'Sakyan', category:'group', type:"Car rental platform", description:"A centralized car rental platform that brings vehicle discovery and rental journeys into one place.", technologies:["React","Dart","JavaScript","Python","Supabase","Vercel"], image:'assets/images/sakyan.webp', repository:"https://github.com/Zel-jpeg/lakbaytech-sakyan", demo:'https://lakbaytech-sakyan.vercel.app/'},
+    {name:'Cafe Berde Kiosk', category:'group', type:"Interactive ordering", description:"A self-service café kiosk with menu browsing, order review, simulated payments, and digital receipts.", technologies:["TypeScript","PostgreSQL","Python","JavaScript","Supabase","Vercel"], image:'assets/images/cafeberde.webp', repository:"https://github.com/Zel-jpeg/verde-cafe-kiosk", demo:'https://verde-cafe-kiosk.vercel.app/'},
+    {"name":"DoneIt","category":"group","type":"Student productivity","description":"A student task management app for organizing academic work.","technologies":["Dart","SQLite"],"image":"assets/images/doneit.png","imageStyle":"app-icon","repository":"https://github.com/Zel-jpeg/DoneeIt","demo":"","apk":"assets/downloads/app-release.apk","mobile":true,"slug":"doneit","overview":"A student productivity app for keeping academic life organized. Manage to-dos, organize courses, and personalize your student ID in one place.","screenshots":[{"src":"assets/images/doneit/screen-01.png","caption":"Personalized ID card introduction"},{"src":"assets/images/doneit/screen-02.png","caption":"Course folders introduction"},{"src":"assets/images/doneit/screen-03.png","caption":"Edit and customize student ID"},{"src":"assets/images/doneit/screen-04.png","caption":"Home dashboard — no tasks"},{"src":"assets/images/doneit/screen-05.png","caption":"Home dashboard — ongoing task"},{"src":"assets/images/doneit/screen-06.png","caption":"Create a new to-do"},{"src":"assets/images/doneit/screen-07.png","caption":"Courses — empty state"},{"src":"assets/images/doneit/screen-08.png","caption":"Course folder overview"},{"src":"assets/images/doneit/screen-09.png","caption":"Add a course and schedule"},{"src":"assets/images/doneit/screen-10.png","caption":"Student profile"},{"src":"assets/images/doneit/screen-11.png","caption":"Completed to-do"},{"src":"assets/images/doneit/screen-12.png","caption":"Settings and ID card options"}]},
+    {"name":"Financify","category":"group","type":"Personal finance","description":"A budgeting application built as part of my development journey.","technologies":["Dart","SQLite"],"image":"assets/images/financify.png","imageStyle":"app-icon","repository":"https://github.com/Zel-jpeg/Financify","demo":"","apk":"assets/downloads/Financify.apk","mobile":true,"slug":"financify","overview":"A personal finance app for tracking income and expenses, allocating budgets, and reviewing spending. Explore budget-friendly recipes and convert currencies alongside your everyday money management.","screenshots":[{"src":"assets/images/financify/screen-01.png","caption":"Home dashboard — balance, activity, and budget"},{"src":"assets/images/financify/screen-02.png","caption":"Analytics and budget allocation"},{"src":"assets/images/financify/screen-03.png","caption":"Budget recipes and meal recommendations"},{"src":"assets/images/financify/screen-04.png","caption":"Currency converter"}]},
+    {"name":"PhilHealth Website Prototype","category":"individual","kind":"figma","type":"Website redesign","description":"A user-centered PhilHealth redesign with clear navigation and accessible layouts.","technologies":["Figma"],"image":"assets/images/philhealth-figma.png","repository":"","demo":"","figma":"https://www.figma.com/proto/vOfqDzzyIrjctuwYepqYI1/HCI-Midterm-Project?node-id=53-619&t=8QuaQlcLIQm8Rg9W-1&starting-point-node-id=53%3A619"},
+    {"name":"Sakyan Website Prototype","category":"group","kind":"figma","type":"Rental platform design","description":"A car rental prototype for comparing vehicles, checking availability, and booking in Mindanao.","technologies":["Figma"],"image":"assets/images/sakyan-figma.png","repository":"","demo":"","figma":"https://www.figma.com/proto/8Vgq0MmYeRPaiePGBnzFlx/Sakyan?node-id=1-3&p=f&t=wBkMFQQ7ZULUKPie-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"},
+    {"name":"Budget Tracker UI","category":"group","kind":"figma","type":"Mobile finance design","description":"A Financify-style mobile interface for tracking income, expenses, and budgets.","technologies":["Figma"],"image":"assets/images/budget-tracker-figma.png","imageStyle":"mobile-design","repository":"","demo":"","figma":"https://www.figma.com/proto/BGeroHXYAkYBr9reYAWOcW/Budget-Tracker-UI?node-id=2-1225&p=f&t=ogUQkG449GGYW2RJ-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A1225&show-proto-sidebar=1"}
   ],
   achievements: [
-    {title:'Cisco Networking Academy', organization:'[Add exact certificate title / issuer]', date:'[Add date]', description:'Listed in my previous portfolio. Add the exact credential details and certificate image.', image:'', url:''},
-    {title:'[Achievement or certification]', organization:'[Organization / issuing institution]', date:'[Add date]', description:'[Add an award, competition, seminar, workshop, training, or academic achievement.]', image:'', url:''}
+    {"title":"CCNA: Switching, Routing, and Wireless Essentials","organization":"Cisco Networking Academy · Davao del Norte State College","date":"","description":"Completed the Switching, Routing, and Wireless Essentials course through the Cisco Networking Academy program.","image":"assets/certificates/cisco-certificate.jpg","url":""}
   ],
   experience: [
-    {role:'Academic project experience', organization:'Davao del Norte State College', date:'[Add dates]', description:'Developed technical and design skills through academic projects and self-directed learning.', bullets:['[Describe your specific contribution to Skillbridge or Sakyan.]','[Add a collaboration, technical challenge, or outcome you can explain.]']},
-    {role:'[Role / volunteer position]', organization:'[Organization]', date:'[Add dates]', description:'[Add relevant work, leadership, volunteer, or school activity experience. Remove this entry if not applicable.]', bullets:[]}
+    {role:'Data Entry — Workiz', organization:'', date:'', description:'Gained one month of hands-on data entry experience using Workiz.', bullets:[]},
+    {role:'Data Entry — Housecall Pro & GoHighLevel', organization:'', date:'', description:'Currently using Housecall Pro (HCP) and GoHighLevel (GHL) for data entry while continuing to learn both platforms.', bullets:[]},
+    {"role":"Academic project experience","organization":"Davao del Norte State College","date":"","description":"Collaborated on academic projects, pitched Sakyan at competitions and a project booth, and presented Skillbridge during our capstone defense.","bullets":[],"gallery":[{"src":"assets/images/experience/sakyan-booth.jpg","title":"Sakyan project booth","caption":"Showcasing our car rental platform with the team."},{"src":"assets/images/experience/sakyan-pitch.jpg","title":"Sakyan pitching presentation","caption":"Presenting our rental platform and its place in the market."},{"src":"assets/images/experience/sakyan-team-pitch.jpg","title":"Sakyan team presentation","caption":"Pitching Sakyan together as a team."},{"src":"assets/images/experience/sakyan-pitch-team.jpg","title":"Pitching competition","caption":"Taking part in a pitching competition with our Sakyan team."},{"src":"assets/images/experience/skillbridge-defense.jpg","title":"Skillbridge capstone defense","caption":"Presenting our OJT placement decision support system during our capstone defense."},{"src":"assets/images/experience/sakyan-showcase-team.jpg","title":"Sakyan showcase team","caption":"A team moment following our project showcase and pitching activities."}]},
   ]
 };

@@ -1,0 +1,31 @@
+.app-page{border-top:5px solid var(--accent)}
+.app-page .topbar{position:sticky;top:0}.app-main{display:block;max-width:900px;margin:0 auto;padding:45px 30px 50px;min-height:70vh}
+.app-back{display:inline-block;font-size:12px;color:var(--muted);margin-bottom:42px}.app-back:hover{color:var(--accent)}
+.app-heading{display:flex;align-items:center;gap:20px}.app-heading>img{width:80px;height:80px;border-radius:20px;object-fit:contain}
+.app-heading h1{font-size:38px;margin:8px 0 0;letter-spacing:-1.3px}.app-heading .eyebrow{font-size:9px;letter-spacing:1.5px}
+.app-description{font-size:14px;line-height:1.9;color:var(--muted);margin:24px 0;max-width:760px}
+.app-actions{display:flex;flex-wrap:wrap;gap:12px}.app-primary,.app-secondary{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 17px;border:1px solid var(--line);border-radius:9px;font-size:12px;font-weight:600;min-height:44px}
+.app-primary{background:var(--text);color:var(--bg);border-color:var(--text)}.app-primary:disabled{cursor:not-allowed;opacity:.5}.app-secondary{background:var(--card,var(--bg));color:var(--text)}
+.app-secondary .github-icon{width:18px;height:18px}.app-primary:hover:not(:disabled),.app-secondary:hover{opacity:.85}
+.apk-info{font-size:11px;color:var(--muted);margin:13px 0 20px}.app-tools{display:flex;flex-wrap:wrap;gap:8px}
+.app-main .app-screens{padding:32px 0 0;margin-top:35px;border:0;border-top:1px solid var(--line);border-radius:0;background:none;box-shadow:none}
+.app-section-title{display:flex;align-items:center;justify-content:space-between;gap:20px}.app-section-title h2{font-size:24px}.app-section-title .eyebrow{font-size:8px;text-align:right}
+.app-hint{font-size:12px;color:var(--muted);margin:10px 0 22px}.app-screenshots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.app-screen img{width:100%;height:auto;max-height:500px;object-fit:contain;border:1px solid var(--line);border-radius:12px;background:var(--surface)}.app-screen figcaption{font-size:11px;color:var(--muted);margin-top:10px}
+.app-preview-empty{grid-column:1/-1;border:1px dashed var(--line);border-radius:12px;padding:48px 22px;text-align:center;background:var(--surface);color:var(--muted);font-size:13px}.app-preview-empty>span{font-size:15px;font-weight:600;color:var(--text)}.app-preview-empty p{margin-top:8px}
+.app-bottom{display:flex;justify-content:space-between;align-items:center;gap:15px;border-top:1px solid var(--line);padding-top:25px;margin-top:38px}.app-bottom .eyebrow{font-size:8px}
+.app-footer{max-width:900px;margin:auto;padding:20px 30px 30px;display:flex;justify-content:space-between;gap:15px;color:var(--muted);font-size:10px}
+.app-main [hidden]{display:none!important}
+@media(max-width:600px){.app-main{padding:30px 22px 40px}.app-back{margin-bottom:30px}.app-heading{gap:15px}.app-heading>img{width:66px;height:66px;border-radius:16px}.app-heading h1{font-size:30px}.app-heading .eyebrow{font-size:8px}.app-description{font-size:13px}.app-screenshots{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.app-actions>a,.app-actions>button{flex:1;white-space:nowrap}.app-section-title{align-items:flex-start}.app-section-title h2{font-size:21px}.app-footer{padding:20px 22px}.app-page .header-actions{gap:12px}}
+@media print{.app-page .topbar,.app-actions,.app-back,.app-footer{display:none}.app-main{max-width:none;padding:0}.app-preview-empty{display:none}}
+/* Keep the project navigation link centered beside the theme control. */
+.app-page .header-actions{display:flex;align-items:center;gap:14px}
+.app-page .header-actions>.text-link{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 4px;line-height:1.2;white-space:nowrap}
+@media(max-width:760px){.app-page .header-actions>.text-link{min-height:36px}}
+/* Show each full-height phone screenshot without dark side bands or framing. */
+.app-screen img{display:block;width:100%;height:auto;max-height:none;object-fit:initial;border:0;outline:0;box-shadow:none;background:transparent;border-radius:12px}
+.app-screen>a{display:block;border:0;border-radius:12px;overflow:hidden;background:transparent}
+.app-heading>img{border:0;box-shadow:none;background:transparent}
+.app-heading>img[src$="financify.png"]{clip-path:inset(8% round 10px);transform:scale(1.19)}
+/* Primary actions share the same accent palette as the portfolio. */
+.app-primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
