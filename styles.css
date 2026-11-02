@@ -28,3 +28,29 @@ nav a.active:before{content:'';position:absolute;left:-5px;top:11px;bottom:11px;
 @media(max-width:480px){.hero-grid h1{font-size:clamp(38px,11vw,49px)}.back-top{right:16px;bottom:16px}}
 @media(prefers-reduced-motion:reduce){.project img,.button span{transition:none}.project:hover img,.button:hover span{transform:none}}
 @media print{.copy-email,.copy-status,.reading-progress,.back-top{display:none!important}}
+/* Separated CV navigation panels, with a horizontal strip on smaller screens. */
+@media screen{
+  :root{--nav-bg:#f4f5f6;--nav-hover:#e9ebed;--nav-selected:#303332;--nav-selected-text:#fff}
+  :root[data-theme=dark]{--nav-bg:#202420;--nav-hover:#2b312b;--nav-selected:#e4e8df;--nav-selected-text:#202420}
+  .layout{grid-template-columns:240px minmax(0,1fr);gap:48px}
+  aside{background:var(--nav-bg);border-right:1px solid var(--line);padding:30px 18px 24px;margin-left:-18px;overflow-y:auto;gap:28px}
+  nav{display:flex;flex-direction:column;gap:7px}
+  nav .eyebrow{font-size:11px;letter-spacing:1.3px;padding:0 15px;margin:0 0 8px}
+  nav a{min-height:52px;flex-shrink:0;align-items:center;gap:16px;padding:13px 15px;margin:0;border:1px solid transparent;border-radius:11px;font-size:14px;font-weight:400;line-height:1.4;transition:background-color .2s,color .2s,border-color .2s}
+  nav a span{font-size:11px;min-width:18px;font-variant-numeric:tabular-nums;opacity:.8}
+  nav a:hover{background:var(--nav-hover);color:var(--text);transform:none}
+  nav a.active{background:var(--nav-selected);color:var(--nav-selected-text);font-weight:600;transform:none}
+  nav a.active:before{display:none}
+  .sidebar-note{margin-top:auto;padding:20px 15px 0;flex-shrink:0}
+  @media(max-width:1100px) and (min-width:761px){.layout{grid-template-columns:205px minmax(0,1fr);gap:28px}nav a{font-size:13px;gap:10px;padding:12px}}
+  @media(max-width:760px){
+    html{scroll-padding-top:160px}
+    .layout{display:block}
+    #menu{display:none}
+    aside,aside.open{display:block;position:sticky;top:70px;left:auto;z-index:15;width:auto;height:auto;margin:0 -6.82%;padding:9px 6%;overflow:visible;border-right:0;border-bottom:1px solid var(--line);background:var(--bg)}
+    nav{flex-direction:row;gap:8px;overflow-x:auto;padding:2px 2px 7px;scrollbar-width:thin;scrollbar-color:var(--line) transparent;overscroll-behavior-x:contain}
+    nav .eyebrow,nav a span,.sidebar-note{display:none}
+    nav a{min-height:46px;padding:12px 20px;border-radius:11px;font-size:12px;white-space:nowrap;background:var(--nav-bg)}
+    nav a.active{background:var(--nav-selected);color:var(--nav-selected-text)}
+  }
+}
