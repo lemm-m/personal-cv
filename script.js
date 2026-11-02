@@ -14,7 +14,30 @@ image($('portrait'),cv.portrait,'Add your profile photo','LB');
 const info=[['Location',cv.location],['Email',cv.email],['Contact number',cv.phone||'[Add number, optional]'],['Current year',cv.yearLevel],['Personal description','IT student, hands-on learner, and aspiring web developer.'],['Career interests','Web development · UI/UX design · Software development']];
 info.forEach(([label,value])=>{const box=el('div');box.append(el('dt','',label));const dd=el('dd');dd.append(label==='Email'?link('mailto:'+value,value):label==='Contact number'&&cv.phone?link('tel:'+cv.phone,cv.phone):document.createTextNode(value));box.append(dd);$('info').append(box);});
 cv.education.forEach(item=>{const a=el('article');const row=el('div','item-heading');row.append(el('h3','',item.school),el('span','date',item.date));a.append(row,el('p','subtitle',item.program),el('p','detail',item.detail));$('education-list').append(a);});
-cv.skillGroups.forEach(group=>{const box=el('article','skill-group');box.append(el('h3','',group.title),tags(group.items));$('skill-list').append(box);});
+// Local SVG icons keep the toolkit independent of fonts, CDNs, and network access.
+const skillIcons={
+  'html5':'html5','html':'html5','css3':'css3','css':'css3',
+  'javascript':'javascript','bootstrap':'bootstrap','python':'python','java':'java',
+  'git & github':'git','git':'git','visual studio code':'vscode','vscode':'vscode',
+  'figma':'figma','responsive design':'responsive','ui/ux design':'design',
+  'problem solving':'problem'
+};
+cv.skillGroups.forEach(group=>{
+  const box=el('article','skill-group');
+  const list=el('ul','toolkit-list');
+  group.items.forEach(name=>{
+    const item=el('li','toolkit-item');
+    const iconBox=el('span','toolkit-icon');
+    iconBox.setAttribute('aria-hidden','true');
+    const icon=skillIcons[name.trim().toLowerCase()];
+    if(icon){
+      const img=el('img');img.src='assets/icons/'+icon+'.svg';img.alt='';
+      img.width=26;img.height=26;iconBox.append(img);
+    }else{iconBox.append(el('span','toolkit-fallback',name.startsWith('[')?'+':name.slice(0,2).toUpperCase()));}
+    item.append(iconBox,el('span','toolkit-label',name));list.append(item);
+  });
+  box.append(el('h3','',group.title),list);$('skill-list').append(box);
+});
 cv.projects.forEach((p,i)=>{const article=el('article','project');const preview=el('div','project-preview');image(preview,p.image,'Add project screenshot',String(i+1).padStart(2,'0'));const body=el('div','project-body');body.append(el('p','eyebrow',p.type),el('h3','',p.name),el('p','detail',p.description),tags(p.technologies));const links=el('div','project-links');links.append(link(p.repository,'Source code'),link(p.demo,'Live demo'));body.append(links);article.append(preview,body);$('project-list').append(article);});
 $('github-link').append(link(cv.links.github,'GitHub'));
 $('linkedin-link').append(link(cv.links.linkedin,'LinkedIn'));

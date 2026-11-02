@@ -58,3 +58,13 @@ nav a.active:before{content:'';position:absolute;left:-5px;top:11px;bottom:11px;
 .subsection{margin-top:30px;padding-top:30px;border-top:1px solid var(--line)}
 .subsection .section-heading{margin-bottom:18px}.subsection h2{font-size:20px;letter-spacing:-.3px}
 .contact-email .text-link{font-size:clamp(16px,3vw,23px);overflow-wrap:anywhere}
+/* Small local tool icons add identity without adding decorative clutter. */
+.toolkit-list{list-style:none;display:grid;gap:10px;padding:0;margin:0}
+.toolkit-item{display:flex;align-items:center;gap:11px;min-height:56px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;transition:background-color .2s,border-color .2s,transform .2s}
+.toolkit-icon{width:36px;height:36px;flex:0 0 36px;display:grid;place-items:center;background:#fff;border:1px solid #e5e7e8;border-radius:7px}
+.toolkit-icon img{width:26px;height:26px;object-fit:contain}
+.toolkit-label{font-size:12px;font-weight:500;line-height:1.45;overflow-wrap:anywhere;min-width:0}
+.toolkit-fallback{color:#596654;font-size:13px;font-weight:600}
+@media(hover:hover){.toolkit-item:hover{background:var(--surface);border-color:var(--accent);transform:translateX(3px)}}
+@media(prefers-reduced-motion:reduce){.toolkit-item:hover{transform:none}}
+@media print{.toolkit-list{gap:5px}.toolkit-item{min-height:40px;padding:5px 8px;break-inside:avoid}.toolkit-icon{width:28px;height:28px;flex-basis:28px}.toolkit-icon img{width:22px;height:22px}}

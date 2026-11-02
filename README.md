@@ -97,3 +97,7 @@ Typography uses Segoe UI with native system sans-serif fallbacks, without extern
 Navigation now groups the CV into Profile, Experience, Skills, Community, Projects, Training, Certifications, Education, and Contact. Basic information is under Profile; GitHub, LinkedIn, and social links are under Contact. Edit the community and training arrays in content.js to replace their placeholders. Existing personal content and image/link fields remain editable in the same file.
 
 
+
+## Toolkit icons
+Skills now render as compact icon rows. Local SVG illustrations in assets/icons/ represent your existing tools; no CDN or font downloads are required. The skillIcons map in script.js matches names from content.js, ignoring capitalization. Unknown skill names receive a text fallback. Images are decorative because each row already includes its skill name. These simplified tool illustrations are not official brand assets.
+
