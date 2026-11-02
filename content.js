@@ -3,10 +3,21 @@ window.cv = {
   name: 'Lemuel Brion', title: 'Aspiring Web Developer',
   introduction: 'BS Information Technology student with an interest in thoughtful interfaces, responsive websites, and practical solutions through code.',
   objective: 'To contribute to a collaborative team through an internship or entry-level opportunity, apply my web development and design skills, and continue growing through real-world projects.',
-  location: 'Davao del Norte, Philippines', email: 'brion.lemuel@dnsc.edu.ph', phone: '',
+  location: 'Davao del Norte, Philippines', email: 'brionlemuel@gmail.com', phone: '09456626038',
   portrait: '', // Example: assets/profile.jpg
   yearLevel: '[Add your current year level]',
-  links: { github: '', linkedin: '', facebook: '', instagram: '' },
+  links: {
+    github: 'https://github.com/lemm-m',
+    linkedin: 'https://www.linkedin.com/in/lemuel-brion-a997b1448/',
+    facebook: 'https://www.facebook.com/lemuel.brion.9',
+    instagram: 'https://www.instagram.com/ramennsukii/'
+  },
+  community: [
+    {title:'[Organization or community activity]', organization:'[Organization / community]', date:'[Add dates]', description:'[Describe your role, volunteer contribution, or school organization involvement.]'}
+  ],
+  training: [
+    {title:'[Training, workshop, or seminar]', organization:'[Training provider / organizer]', date:'[Add date]', description:'[Describe the topic, practical activities, and skills you learned.]'}
+  ],
   education: [
     { school:'Davao del Norte State College', program:'Bachelor of Science in Information Technology', date:'[Add attendance dates]', detail:'Academic interests include web development, programming, UI/UX design, and software development.' },
     { school:'[Senior High School]', program:'[Strand / program]', date:'[Add attendance dates]', detail:'[Add relevant academic honors or activities, or remove this entry.]' }

@@ -22,10 +22,10 @@ Edit `content.js`. This is the central content file; no framework knowledge is n
 - Add exact certificate names, dates, images, and credential links. The Cisco entry comes from the old portfolio and still needs its exact details.
 - Replace bracketed entries with truthful information. Remove unused senior high school, achievement, or experience entries from their arrays.
 - Review the suggested career objective and skills. Remove any skills you cannot demonstrate. Professional skills can be added to `skillGroups`.
-- Contact number is optional. Email is taken from the existing public portfolio.
+- Contact number is optional. Contact email is brionlemuel@gmail.com, as provided by the student.
 - Update the two submission URLs at the top of this README after deployment.
 
-No account links or external project links have been assumed: they remain empty as requested. Nothing is uploaded from the photo or certificate placeholders. These are static placeholders, not upload controls.
+Social profile links use the student-provided Facebook, Instagram, LinkedIn, and GitHub URLs. External project links remain placeholders. Nothing is uploaded from the photo or certificate placeholders. These are static placeholders, not upload controls.
 
 ## File structure
 
@@ -95,4 +95,5 @@ Typography uses Segoe UI with native system sans-serif fallbacks, without extern
 
 ## CV section categories
 Navigation now groups the CV into Profile, Experience, Skills, Community, Projects, Training, Certifications, Education, and Contact. Basic information is under Profile; GitHub, LinkedIn, and social links are under Contact. Edit the community and training arrays in content.js to replace their placeholders. Existing personal content and image/link fields remain editable in the same file.
+
 
