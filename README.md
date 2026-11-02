@@ -92,3 +92,7 @@ This is an editable assignment foundation. Browser visual validation, replacing 
 ## Latest design refinement
 Typography uses Segoe UI with native system sans-serif fallbacks, without external font downloads. Interactions include copy email with status feedback, a reading progress line, back-to-top control, and subtle hover/focus feedback. Clipboard copying requires a supported secure context (HTTPS or localhost); if unavailable, the interface asks the visitor to select the address manually.
 
+
+## CV section categories
+Navigation now groups the CV into Profile, Experience, Skills, Community, Projects, Training, Certifications, Education, and Contact. Basic information is under Profile; GitHub, LinkedIn, and social links are under Contact. Edit the community and training arrays in content.js to replace their placeholders. Existing personal content and image/link fields remain editable in the same file.
+

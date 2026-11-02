@@ -54,3 +54,7 @@ nav a.active:before{content:'';position:absolute;left:-5px;top:11px;bottom:11px;
     nav a.active{background:var(--nav-selected);color:var(--nav-selected-text)}
   }
 }
+/* Related information stays grouped within Profile and Contact. */
+.subsection{margin-top:30px;padding-top:30px;border-top:1px solid var(--line)}
+.subsection .section-heading{margin-bottom:18px}.subsection h2{font-size:20px;letter-spacing:-.3px}
+.contact-email .text-link{font-size:clamp(16px,3vw,23px);overflow-wrap:anywhere}

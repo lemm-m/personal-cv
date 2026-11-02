@@ -22,6 +22,16 @@ $('linkedin-link').append(link(cv.links.linkedin,'LinkedIn'));
 cv.achievements.forEach(item=>{const box=el('article','achievement');const preview=el('div','certificate-preview');image(preview,item.image,'Add certificate or achievement image','▤');box.append(preview,el('h3','',item.title),el('p','subtitle',item.organization),el('span','date',item.date),el('p','detail',item.description),link(item.url,'View credential'));$('achievement-list').append(box);});
 cv.experience.forEach(item=>{const article=el('article');const row=el('div','item-heading');row.append(el('h3','',item.role),el('span','date',item.date));article.append(row,el('p','subtitle',item.organization),el('p','detail',item.description));if(item.bullets.length){const list=el('ul');item.bullets.forEach(b=>list.append(el('li','',b)));article.append(list);}$('experience-list').append(article);});
 $('year').textContent=new Date().getFullYear();
+['community','training'].forEach(category=>{
+  (cv[category]||[]).forEach(item=>{
+    const article=el('article');
+    const row=el('div','item-heading');
+    row.append(el('h3','',item.title),el('span','date',item.date));
+    article.append(row,el('p','subtitle',item.organization),el('p','detail',item.description));
+    $(category+'-list').append(article);
+  });
+});
+$('contact-email').append(link('mailto:'+cv.email,cv.email));
 // A useful contact interaction with visible, screen-reader-friendly feedback.
 const emailDetails = [...document.querySelectorAll('#info dd')][1];
 const copyEmail = el('button','copy-email','Copy email');
